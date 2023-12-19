@@ -1,0 +1,7 @@
+{
+  "name": "app-unicomer",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

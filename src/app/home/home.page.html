@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Subir información de la aplicación </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tomar una foto</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container">
+    <ion-img [src]="photoUrl" *ngIf="photoUrl"></ion-img>
+  </div>
+
+  <ion-modal [isOpen]="isModalOpen" #modal trigger="open-modal">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar class="primary">
+          <ion-title>Análisis</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Cerrar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p>{{data}}
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>
+
+<ion-footer>
+  <ion-button expand="block" (click)="takePicture()">Tomar Foto</ion-button>
+  <ion-button expand="block" (click)="selectFromGallery()">Select from Gallery</ion-button>
+</ion-footer>
